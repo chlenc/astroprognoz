@@ -88,7 +88,7 @@ bot.on('message', (msg) => {
 });
 
 bot.on('callback_query', query => {
-    console.log(query.data)
+    // console.log(query.data)
 
     const {chat, message_id, text} = query.message;
     try{
