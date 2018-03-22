@@ -1,3 +1,4 @@
 .idea
 node_modules
 googleSheep.js
+client_secret.json

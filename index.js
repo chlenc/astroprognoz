@@ -6,7 +6,7 @@ const helpers = require('./helpers');
 const keyboards = require('./keyboard');
 const kb = require('./keyboard-buttons');
 const frases = require('./frases');
-const gs = require('./googleSheep')
+// const gs = require('./googleSheep')
 // const firebase = require("firebase");
 // firebase.initializeApp({
 //     serviceAccount: "./lunar outlook-e000f7dfcf51.json",
@@ -116,10 +116,11 @@ bot.onText(/\/home/, msg => {
 });
 
 bot.onText(/\/help/, msg => {
-
+    bot.sendMessage(msg.chat.id,frases.help)
 });
 
 bot.onText(/\/about/, msg => {
+    bot.sendMessage(msg.chat.id,frases.about)
 });
 
 // bot.onText(/\/echo/, msg => {
