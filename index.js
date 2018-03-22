@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-const token = "502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo";//"459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";
+const token = /*"459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";*/"502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo" ;
 var schedule = require('node-schedule');
 const bot = new TelegramBot(token, {polling: true});
 const helpers = require('./helpers');
@@ -76,29 +76,28 @@ bot.on('message', (msg) => {
         helpers.sendAdvice(bot, chatId, 2, frases.hairCut);
     }
     else if ((text == '🚀Лучший день для начинаний')) {
-        helpers.sendAdvice(bot, chatId, 4, frases.hairCut);
+        helpers.sendAdvice(bot, chatId, 4, frases.bestStartDay);
     }
     else if ((text == '🛠Уборка, домашние дела')) {
-        helpers.sendAdvice(bot, chatId, 8, frases.hairCut);
+        helpers.sendAdvice(bot, chatId, 8, frases.cleanDay);
     }
     else if ((text == '🎯Удачный день для бизнеса')) {
-        helpers.sendAdvice(bot, chatId, 6, frases.hairCut);
+        helpers.sendAdvice(bot, chatId, 6, frases.buisnessDay);
     }
 
 });
 
 bot.on('callback_query', query => {
-    // console.log(query)
+    console.log(query.data)
 
     const {chat, message_id, text} = query.message;
     try{
         var parseQuery = JSON.parse(query.data);
-        if(parseQuery.type === 'advice'){
+        // if(parseQuery.type === 'advice'){
             helpers.getAdviceDetalization(parseQuery.num,parseQuery.date,function(callback){
                 bot.sendMessage(chat.id, callback + '\n\n' + frases.goToHome);
-                return
             });
-        }
+        // }
     }catch(e){
         console.log(e)
     }

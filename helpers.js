@@ -267,7 +267,7 @@ module.exports = {
                 keyboard.push([{
                     text: (date + ' - ' + data[i][+type + 1]),
                     callback_data: JSON.stringify({
-                        type: 'advice',
+                        // type: 'advice',
                         num: type,
                         date: new Date(data[i][0]).getTime()
                     })
