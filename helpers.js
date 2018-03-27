@@ -321,12 +321,14 @@ module.exports = {
                         date = new Date();
                         date.setHours(date.getHours() + timezone)
                         date.setDate(date.getDate() + 1);
+                        sendAstroForecast(bot, temp, date, '', true)
                     }
                     if (users[temp].beforehand == false || time == '24:00') {
                         date = new Date();
                         date.setHours(date.getHours() + timezone)
+                        sendAstroForecast(bot, temp, date, '', false)
                     }
-                    sendAstroForecast(bot, temp, date, '', true)
+
                 } catch (e) {}
             }
 
