@@ -4,7 +4,10 @@
   "description": "remake of stroprognoz_bot",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.9.3"
   },
   "author": "",
   "license": "ISC",

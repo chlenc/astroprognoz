@@ -1,17 +1,13 @@
 const TelegramBot = require('node-telegram-bot-api');
-const token = "459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";/*"502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo"*/;
+const token =/* "459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";*/"502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo";
 var schedule = require('node-schedule');
-const bot = new TelegramBot(token, {polling: true});
+
+const bot = new TelegramBot(token, {polling:true});
+
 const helpers = require('./helpers');
 const keyboards = require('./keyboard');
 const kb = require('./keyboard-buttons');
 const frases = require('./frases');
-// const gs = require('./googleSheep')
-// const firebase = require("firebase");
-// firebase.initializeApp({
-//     serviceAccount: "./lunar outlook-e000f7dfcf51.json",
-//     databaseURL: "https://lunar-outlook.firebaseio.com/"
-// })
 
 const rule = new schedule.RecurrenceRule();
 rule.minute = 1;
