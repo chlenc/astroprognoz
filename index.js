@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-const token = /*"459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";*/"502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo" ;
+const token = "459914749:AAE38mka1v9hyxYk1l2aihXBN05lRlM0Oi8";/*"502100941:AAETwKMomDTjDGaJsKLIcNZnbzXH93fTrTo"*/;
 var schedule = require('node-schedule');
 const bot = new TelegramBot(token, {polling: true});
 const helpers = require('./helpers');
@@ -122,12 +122,12 @@ bot.onText(/\/about/, msg => {
     bot.sendMessage(msg.chat.id,frases.about)
 });
 
-// bot.onText(/\/echo/, msg => {
-//      gs.getData(function (callback) {
-//          console.log(callback)
-//      })
-//     console.log('end')
-// });
+bot.onText(/\/echo/, msg => {
+     gs.getData(function (callback) {
+         console.log(callback)
+     })
+    console.log('end')
+});
 
 
 console.log('Bot has been started ....');
